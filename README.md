@@ -19,7 +19,7 @@ HOW TO USE
 - Open the card_list.txt and paste your list
 - In command prompt, run command: node cart_builder.js
 - sit back and watch
-- Once complete, you it will output cards added and cards that were unable to be added to output.txt
+- Once complete, you it will output cards added and cards that were unable to be added to command prompt
 
 The cart is saved in the browser's cache. So you can open up any instance of chrome and the cart will be present. 
 
@@ -27,3 +27,7 @@ LIMITATIONS
 - Cannot add Basic Lands
 - Software adds a single item per line. If from Moxfield and follows this following format: 3 Access Tunnel (STX) 262; It will parse the "3", however, it currently does nothing with that value.
 - This was only tested on a Windows machine... Unsure of MacOS.
+
+FUTURE IMPLEMENTATION
+- Show which cards are avaialbe for pickup at designated store
+- Converted to a Web App so setup is not required
