@@ -29,5 +29,5 @@ LIMITATIONS
 - This was only tested on a Windows machine... Unsure of MacOS.
 
 FUTURE IMPLEMENTATION
-- Show which cards are avaialbe for pickup at designated store
-- Converted to a Web App so setup is not required
+- Show which cards are available for pickup at designated store
+- Ability to choose printing of card
