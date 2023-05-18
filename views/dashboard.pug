@@ -1,0 +1,72 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
+    title Dashboard
+    style.
+      section.metric {
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      section.metric h2 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+      section.metric p {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+  body
+    h1 Dashboard
+    if sample_data
+      .container
+        .row
+          .col-md-6
+            section.metric
+              h2 Cards Added
+              p= sample_data.cards_added_total + " of " + sample_data.cards_to_add_total
+          .col-md-6
+            section.metric
+              h2 Total Price
+              p= "$" + sample_data.total_price
+        .row
+          .col-md-4
+            section.metric
+              h2 Local Added Total
+              p= sample_data.local_added_total        
+          .col-md-4
+            section.metric
+              h2 Cards Added Gilbert Total
+              p= sample_data.cards_added_gilbert_total
+          .col-md-4
+            section.metric
+              h2 Cards Added Glendale Total
+              p= sample_data.cards_added_glendale_total          
+        hr
+        table.table.table-striped.table-bordered.table-hover.with-margin
+          thead
+            tr.bg-info.text-white
+              th Price
+              th Name
+              th ID
+              th Set
+              th Store
+              th Gilbert
+              th Glendale
+          tbody
+            each item, index in sample_data.cards
+              tr(class=(index % 2 == 0 ? 'bg-light' : 'bg-white'))
+                td= item.price
+                td= item.name
+                td= item.id
+                td= item.set
+                td= item.store
+                td= item.is_gilbert ? 'Yes' : 'No'
+                td= item.is_glendale ? 'Yes' : 'No'
+    else
+      p No data available.

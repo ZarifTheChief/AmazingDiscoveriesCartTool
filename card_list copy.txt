@@ -1,0 +1,52 @@
+1 Aetherize (SCD) 42 #pseudo-boardwipe
+1 Anticipate (M20) 45 #!card-draw #card-draw-instant #!selective-card-draw
+1 Arcane Denial (ALL) 22b #counter #counter-spell
+1 Arcane Signet (VOC) 159 #!mana-rock
+1 Archmage Emeritus (STX) 37 #card-draw-creature
+1 Blink of an Eye (DOM) 46 #!bounce #!card-draw #card-draw-instant
+1 Blustersquall (RTR) 30 #tap-creature
+1 Boomerang (10E) 70 #!bounce
+1 Brainstorm (EMA) 40 #!card-draw #card-draw-instant #!selective-card-draw
+1 Candlekeep Inspiration (CLB) 59 #!wincon
+1 Counterspell (DMR) 281 #!counter #counter-spell
+1 Deekah, Fractal Theorist (C21) 26 #!token-generator
+1 Deprive (ROE) 59 #!counter
+1 Dispel (RTR) 36 #!counter #!counter-limited
+1 Expel from Orazca (RIX) 37 #!bounce
+1 Favorable Winds (SCD) 52 #!pump
+1 Flow of Knowledge (BRO) 49 #!card-draw #card-draw-instant
+1 Frantic Search (DMR) 285 #!card-draw #card-draw-instant
+1 God-Eternal Kefnet (WAR) 53 #!cheaper-spells
+1 Grip of the Roil (OGW) 56 #!card-draw #card-draw-instant #tap-creature
+1 Guile (JVC) 14 #!free-cast
+1 Haughty Djinn (DMU) 52 #beater #cheaper-spells
+1 Heraldic Banner (ELD) 222 #!mana-rock #pump
+1 High Tide (DMR) 286 #!mana-ramp
+1 Hullbreaker Horror (VOW) 63 #bounce #!bounce
+1 Impulse (DMR) 287 #card-draw #card-draw-instant #!selective-card-draw
+1 Isochron Scepter (DDJ) 16
+1 Jin-Gitaxias, Progress Tyrant (NEO) 59 #counter
+1 Mana Leak (2X2) 58 #!counter #counter-spell
+1 Metallurgic Summonings (KLD) 56 #recursion #!token-generator
+1 Negate (ZNR) 71 #!counter #counter-limited
+1 Niblis of Frost (C20) 120 #!tap-creature
+1 Opt (ELD) 59 #!card-draw #card-draw-instant
+1 Ornithopter of Paradise (MH2) 430 #!mana-dork
+1 Overwhelming Denial (OGW) 61 #!counter #counter-spell
+1 Ponder (NCC) 229 #!card-draw #card-draw-sorcery
+1 Preordain (PHED) 37 #card-draw #card-draw-sorcery #selective-card-draw
+1 Rewind (MM3) 47 #!counter #counter-spell
+1 Scour All Possibilities (MH1) 67 #card-draw #card-draw-sorcery #!selective-card-draw
+1 Serum Visions (AFC) 94 #!card-draw #card-draw-instant
+1 Silent Departure (ISD) 75 #bounce
+1 Silver Myr (NEC) 158 #mana-dork
+1 Sleep (PLIST) 465 #tap-creature
+1 Sol Ring (C15) 268 #!mana-rock
+1 Solve the Equation (STX) 54 #!tutor
+1 Telling Time (MM2) 61 #card-draw #card-draw-instant #!selective-card-draw
+1 Trawler Drake (ONE) 74 #!beater
+1 Turn Aside (EMN) 78 #!counter #counter-limited
+1 Twisted Image (A25) 75 #!card-draw #card-draw-instant
+1 Unsummon (HOU) 54 #!bounce
+1 Void Snare (M15) 82 #bounce
+1 Wavebreak Hippocamp (J22) 371 #card-draw-creature

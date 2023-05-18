@@ -1,58 +1,75 @@
-1 Aetherize (SCD) 42 #pseudo-boardwipe
-1 Alandra, Sky Dreamer (J22) 9 #!token-generator
-1 Anticipate (M20) 45 #!card-draw #card-draw-instant #!selective-card-draw
-1 Arcane Denial (ALL) 22b #counter #counter-spell
-1 Arcane Signet (VOC) 159 #!mana-rock
-1 Archmage Emeritus (STX) 37 #card-draw-creature
-1 Blink of an Eye (DOM) 46 #!bounce #!card-draw #card-draw-instant
-1 Blustersquall (RTR) 30 #tap-creature
-1 Boomerang (10E) 70 #!bounce
-1 Brainstorm (EMA) 40 #!card-draw #card-draw-instant #!selective-card-draw
-1 Candlekeep Inspiration (CLB) 59 #!wincon
-1 Counterspell (DMR) 281 #!counter #counter-spell
-1 Deekah, Fractal Theorist (C21) 26 #!token-generator
-1 Dispel (RTR) 36 #!counter #!counter-limited
-1 Expel from Orazca (RIX) 37 #!bounce
-1 Favorable Winds (SCD) 52 #!pump
-1 Flow of Knowledge (BRO) 49 #!card-draw #card-draw-instant
-1 Frantic Search (DMR) 285 #!card-draw #card-draw-instant
-1 God-Eternal Kefnet (WAR) 53 #!cheaper-spells
-1 Grip of the Roil (OGW) 56 #!card-draw #card-draw-instant #tap-creature
-1 Guile (JVC) 14 #!free-cast
-1 Haughty Djinn (DMU) 52 #beater #cheaper-spells
-1 Heraldic Banner (ELD) 222 #!mana-rock #pump
-1 High Tide (DMR) 286 #!mana-ramp
-1 Hullbreaker Horror (VOW) 63 #bounce #!bounce
-1 Impulse (DMR) 287 #card-draw #card-draw-instant #!selective-card-draw
-1 Jace's Sanctum (C19) 88 #!cheaper-spells
-1 Jin-Gitaxias, Progress Tyrant (NEO) 59 #counter
-1 Mana Leak (2X2) 58 #!counter #counter-spell
-1 Metallurgic Summonings (KLD) 56 #!token-generator
-1 Negate (ZNR) 71 #!counter #counter-limited
-1 Niblis of Frost (C20) 120 #!tap-creature
-1 Opt (ELD) 59 #!card-draw #card-draw-instant
-1 Ornithopter of Paradise (MH2) 430 #!mana-dork
-1 Overwhelming Denial (OGW) 61 #!counter #counter-spell
-1 Ponder (NCC) 229 #!card-draw #card-draw-sorcery
-1 Preordain (PHED) 37 #card-draw #card-draw-sorcery #selective-card-draw
-1 Rewind (MM3) 47 #!counter #counter-spell
-1 Rise from the Tides (SOI) 83 #!token-generator
-1 Scour All Possibilities (MH1) 67 #card-draw #card-draw-sorcery #!selective-card-draw
-1 Secrets of the Golden City (RIX) 52 #!card-draw #card-draw-sorcery
-1 Serum Visions (AFC) 94 #!card-draw #card-draw-instant
-1 Silent Departure (ISD) 75 #bounce
-1 Silver Myr (NEC) 158 #!creature-mana
-1 Sleep (PLIST) 465 #tap-creature
-1 Slip Through Space (OGW) 47 #card-draw #card-draw-sorcery
-1 Solve the Equation (STX) 54 #!tutor
-1 Telling Time (MM2) 61 #card-draw #card-draw-instant #!selective-card-draw
-1 Thought Vessel (PLIST) 274 #!mana-rock
-1 Trawler Drake (ONE) 74 #!beater
-1 Turn Aside (EMN) 78 #!counter #counter-limited
-1 Twisted Image (A25) 75 #!card-draw #card-draw-instant
-1 Unsummon (HOU) 54 #!bounce
-1 Void Shatter (OGW) 49 #!counter #counter-spell
-1 Void Snare (M15) 82 #bounce
-1 Wash Away (VOW) 87 #!counter #!counter-spell
-1 Wavebreak Hippocamp (J22) 371 #card-draw-creature
-1 Wizard's Retort (JMP) 198 #!counter #counter-spell
+1 Arbor Elf (M13) 160 #!mana-creature
+1 Arboreal Grazer (WAR) 149 #mana-ramp
+1 Arcane Signet (MOC) 348 #!mana-rock
+1 Beast Within (C21) 186 #!removal
+1 Bojuka Bog (MOC) 391
+1 Colossal Majesty (J22) 87 #card-draw
+1 Command Tower (C19) 237
+1 Commander's Sphere (C20) 240 #!mana-rock
+1 Culling Ritual (ONC) 117 #!mana-ramp #!pseudo-boardwipe
+1 Cultivate (M21) 177 #mana-ramp
+1 Deathsprout (WAR) 189 #!mana-ramp #!removal
+1 Disciple of Bolas (C20) 132 #!card-draw #!life-gain
+1 Dying Wish (GTC) 64 #life-drain #life-gain
+1 Elvish Mystic (M15) 173 #!mana-creature
+1 End-Raze Forerunners (CLB) 822 #!trample #!wincon
+1 Essence Harvest (AVR) 100 #!life-drain #!life-gain
+1 Eternal Witness (C15) 183 #!recursion
+1 Exotic Orchard (C19) 242
+1 Explore (C19) 164 #!card-draw #!mana-ramp
+1 Exponential Growth (STX) 130 #buff
+1 Exsanguinate (SOM) 61 #life-drain #life-gain
+1 Fake Your Own Death (SNC) 79 #!recursion
+1 Feign Death (AFR) 103 #!recursion
+1 Fellwar Stone (MOC) 356 #!mana-rock
+1 Field of Ruin (MOC) 400
+1 Fungal Sprouting (M13) 173 #!token-generator
+1 Gaea's Gift (BRO) 182 #!buff
+1 Gemrazer (IKO) 155 #!removal
+1 Geode Golem (CLB) 316 #!quick-cast
+1 Ghoulcaller Gisa (JMP) 236 #!token-generator
+1 Go for the Throat (MOC) 250 #!removal
+1 Golgari Rot Farm (C19) 248
+1 Golgari Signet (ONC) 131 #mana-rock
+1 Goreclaw, Terror of Qal Sisma (MUL) 27 #!cheaper-cast
+1 Harrow (ZEN) 165 #!mana-ramp
+1 Haunted Mire (DMU) 248
+1 Jarad, Golgari Lich Lord (C15) 223 #life-drain
+1 Jungle Hollow (MOM) 270
+1 Kaya's Ghostform (WAR) 94 #recursion
+1 Kenrith's Transformation (AFC) 162 #removal
+1 Kodama's Reach (MOC) 306 #!mana-ramp
+1 Korozda Guildmage (C15) 224 #token-generator
+1 Languish (JMP) 246 #!pseudo-boardwipe
+1 Life's Legacy (M15) 183 #!card-draw
+1 Llanowar Elves (DOM) 168 #!mana-creature
+1 Llanowar Wastes (PBRO) 264p
+1 Migratory Greathorn (IKO) 297 #mana-ramp
+1 Mind Stone (MOC) 364 #!mana-rock
+1 Minion's Return (THB) 104 #recursion
+1 Mosswort Bridge (MOC) 415
+1 Myriad Landscape (ZNC) 135 #!mana-ramp
+1 Overwhelming Stampede (C15) 196 #!wincon
+1 Putrefy (C19) 197 #!removal
+1 Rampant Growth (CMR) 432 #!mana-ramp
+1 Reclamation Sage (CMR) 248 #!removal
+1 Return of the Wildspeaker (C21) 205 #!buff #!card-draw
+1 Rishkar's Expertise (AER) 123 #!card-draw #!free-cast
+1 Rite of Consumption (SHM) 76 #life-drain #life-gain
+1 Rogue's Passage (MOC) 421
+1 Ruthless Technomancer (NEC) 56 #!mana-ramp
+1 Ruxa, Patient Professor (C21) 66
+1 Sign in Blood (GN3) 61 #card-draw
+1 Snakeskin Veil (KHM) 194 #buff
+1 Sol Ring (C20) 252 #!mana-rock
+1 Solemn Simulacrum (C21) 264 #!card-draw #!mana-ramp
+1 Swiftfoot Boots (SCD) 279 #!haste #!protection
+1 Tainted Wood (DDM) 78
+1 Talisman of Resilience (C21) 270 #mana-rock
+1 Tanuki Transplanter (NEC) 72 #mana-ramp
+1 Tear Asunder (DMU) 183 #!removal
+1 Temple of Malady (ONC) 169
+1 Tend the Pests (STX) 242 #life-gain #token-generator
+1 Traverse the Outlands (C17) 34 #mana-ramp
+1 Tyvar's Stand (ONE) 190 #buff
+1 Yargle and Multani

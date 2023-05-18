@@ -1,14 +1,23 @@
 import puppeteer from 'puppeteer';
 import fs from 'fs/promises';
-import { checkPrime } from 'crypto';
+import express from "express";
+import jsrender from 'jsrender';
+import bodyParser from 'body-parser';
+import {LocalStorage} from 'node-localstorage' 
+
+const app = express();
+// import {path} from './dashboard.pug';
+
 const url = "https://www.amazingmtg.com/";
+const checkout_url = "https://www.amazingmtg.com/checkout/cart";
 const card_list = []; 
 const card_list_name_only = [];
 const cards_added = [];
 const cards_added_names_only = [];
+const total_price = 0;
 const timer = ms => new Promise(res => setTimeout(res, ms));
 
-const chromeEndpointUrl = "ws://127.0.0.1:9222/devtools/browser/be38ce5f-7202-46b1-ab02-a39a0c1c87f5";
+const chromeEndpointUrl = "ws://127.0.0.1:9222/devtools/browser/6003fea7-ba70-43ea-ab55-7625c466085f";
 
 class CardToAdd {
     constructor(amount, name){
@@ -65,8 +74,10 @@ async function run(){
                     let search_results = [...document.querySelectorAll('.enable-msrp')];
                     let option_details = [];
                     let gilbert = false;
+                    let glendale = false;
 
                     for(let x = 0; x < search_results.length; x++) {
+                        console.log("Searching for card: ", card.name, " " , x+1, " of ", search_results.length)
                         let result = search_results[x];
                         let image = [...result.querySelectorAll(".image")];
                         let href = [...image[0].querySelectorAll("a")][0].href;
@@ -77,15 +88,18 @@ async function run(){
                             card_detail.forEach(el => {
                                 let name = el.attributes["data-name"].value;
                                 if(name.includes(card.name)){
+                                    console.log("Added: ", card.name, " ===> ", name)
                                     let store = el.attributes["data-variant"].value.split(/[:,]/)[1].trim();
                                     let is_gilbert = store === "Gilbert";
+                                    let is_glendale = store === "Glendale";
                                     let details = {
                                         price: parseFloat(el.attributes["data-price"].value.replace('$', '')),
                                         name: name,
                                         id: el.attributes["data-vid"].value,
-                                        set_block: el.attributes["data-category"].value,
+                                        set: el.attributes["data-category"].value,
                                         store: store,
-                                        is_gilbert: is_gilbert
+                                        is_gilbert: is_gilbert,
+                                        is_glendale: is_glendale
                                     };
                                     option_details.push(details);
                                     if(is_gilbert){ gilbert = true }
@@ -109,6 +123,7 @@ async function run(){
                 var high_price = sorted_details[sorted_details.length - 1].price;
                     high_price = low_price === high_price ? high_price + .1 : high_price;
                 var is_gilbert = card_details.is_gilbert;
+                let is_glendale = card_details.is_glendale;
                 var selected_card = null;
                 var cheapest_option_added = false;
                 if(is_gilbert){
@@ -132,6 +147,27 @@ async function run(){
                         }
                     }
                 }
+                if(is_glendale){
+                    for(let y=0; y<sorted_details.length; y++){
+                        let detail = sorted_details[y];
+                        if(detail.is_glendale && detail.price == low_price){
+                            selected_card = detail;
+                            cheapest_option_added = true;
+                            break;
+                        }
+                    }
+                }
+                if(is_glendale && selected_card == null){
+                    for(let y=0; y<sorted_details.length; y++){
+                        let detail = sorted_details[y];
+                        if(detail.is_glendale && detail.price < high_price){
+                            selected_card = detail;
+                            cheapest_option_added = 
+                                detail.price === low_price ? true : false;
+                            break;
+                        }
+                    }
+                }
                 if(selected_card == null){
                     for(let y=0; y<sorted_details.length; y++){
                         let detail = sorted_details[y];
@@ -148,7 +184,7 @@ async function run(){
                         selected: selected_card,
                         cheapest_option_added: cheapest_option_added
                     });
-                    cards_added_names_only.push(selected_card.name)
+                    cards_added_names_only.push(card.name)
                 }
 
                 for(let z=0; z<cards_added.length; z++){
@@ -173,9 +209,8 @@ async function run(){
                         return Promise.resolve(added);
                     }, card);
                 }
-            }        
+            }
 
-            // await page.close();
             return resolve();
 
         } catch(error) {
@@ -184,9 +219,117 @@ async function run(){
     });
 }
 
-await getCardList();
-await run();
+ await getCardList();
+ await run();
+
+
+
+
+
+
+
 console.log('Cards Added: ', cards_added)
-let cards_added_set = new Set(cards_added_names_only);
+var found_gilbert = [];
+var found_glendale = [];
+var not_found_selected_store = [];
+cards_added.forEach(card => {
+    if(card.selected.is_gilbert){
+        found_gilbert.push(card.selected.name)
+    } else if(card.selected.is_glendale){
+        found_glendale.push(card.selected.name)
+    }else {
+        not_found_selected_store.push(card.selected.name)
+    }
+})
+console.log('Found in Gilbert: ', found_gilbert.length, found_gilbert);
+console.log('Found in Glendale: ', found_glendale.length, found_glendale);
+console.log('Not Found in Local Stores: ', not_found_selected_store.length, not_found_selected_store)
 let unable_to_add = card_list_name_only.filter(x => !cards_added_names_only.includes(x));
 console.log('Unable to Add', unable_to_add)
+
+// app.listen(3000);
+
+// // app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'pug')
+// app.set('views', './views')
+// // LOCAL STORAGE
+// var localStorage = new LocalStorage('./added_decks')
+
+// let sample_data = {
+//     cards_added_total: 79,
+//     cards_to_add_total: 100,
+//     local_added_total: 50,
+//     cards_added_gilbert_total: 40,
+//     cards_added_glendale_total: 10,
+//     total_price: 79.95,
+//     cards: [
+//         {
+//             price: 0.8,
+//             name: 'Aetherize',
+//             id: '86895',
+//             set: 'Gatecrash',
+//             store: 'Glendale',
+//             is_gilbert: false,
+//             is_glendale: true
+//         },
+//         {
+//             price: 0.8,
+//             name: 'Swords to Plowshare',
+//             id: '86895',
+//             set: 'Gatecrash',
+//             store: 'Casa Grande',
+//             is_gilbert: false,
+//             is_glendale: true
+//         },
+//         {
+//             price: 0.9,
+//             name: 'Victimize',
+//             id: '699973',
+//             set: 'Commander 2015',
+//             store: 'Gilbert',
+//             is_gilbert: true,
+//             is_glendale: false
+//         },
+//         {
+//             price: 0.9,
+//             name: 'Liliana Vess',
+//             id: '699973',
+//             set: 'Commander 2015',
+//             store: 'Casa Grande',
+//             is_gilbert: false,
+//             is_glendale: true
+//         }
+//     ]
+// };
+
+// app.get("/", (req, res) => {
+//     console.log('Sample Data: ', sample_data)
+//     res.render('dashboard', { sample_data });
+// });
+
+// app.post("/filter", (req, res) => {
+//     let filter = req.body.selected_filter;
+    
+//     let filtered_data = {
+//         asdf: false,
+//         cards_added_total: 79,
+//         cards_to_add_total: 100,
+//         local_added_total: 50,
+//         cards_added_gilbert_total: 40,
+//         cards_added_glendale_total: 10,
+//         total_price: 67,
+//         data: sample_data.data.filter(d => {
+//             if(filter === "gilbert" && d.is_gilbert){
+//                 return d;
+//             } else if(filter === "glendale" && d.is_glendale){
+//                 return d;
+//             } else if(filter === "online" && !d.is_gilbert && !d.is_glendale){
+//                 return d;
+//             } else if (filter === "all"){
+//                 return d;
+//             }
+//         })
+//     }
+//     let html = template.render(filtered_data);
+//     res.send(html);
+// });
